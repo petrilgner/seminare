@@ -68,11 +68,11 @@ $(document).ready(function () {
                 console.log($(event.target).data('id'));
 
                 if (this.checked) {
-                    $.getJSON(apiUrl + "register?user=" + userParameter + "&q=" + $(element).data('id'), function (data) {
+                    $.getJSON(apiUrl + "register?user=" + userParameter + "&code=" + $(element).data('id'), function (data) {
                         console.log('OK_REG');
                     });
                 } else {
-                    $.getJSON(apiUrl + "unregister?user=" + userParameter + "&q=" + $(element).data('id'), function (data) {
+                    $.getJSON(apiUrl + "unregister?user=" + userParameter + "&code=" + $(element).data('id'), function (data) {
                         console.log('OK_DEREG');
                     });
                 }
