@@ -15,7 +15,7 @@ class ApiPresenter extends \Nette\Application\UI\Presenter
     public function startup()
     {
         parent::startup();
-        $this->user = ltrim($this->getRequest()->getParameter('user'));
+        $this->user = ltrim($this->getRequest()->getParameter('q'));
         if(is_numeric($this->user)) {
             $this->user = $this->model->findUser($this->user);
         }
