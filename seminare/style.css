@@ -1,0 +1,20 @@
+
+body {
+
+
+    background: #3C3C3C;
+    color: white;
+
+}
+
+input {
+    color: #0f0f0f;
+}
+
+.logo {
+    max-width: 400px;
+}
+
+.margined {
+    margin-left: 40px;
+}

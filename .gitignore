@@ -1,0 +1,8 @@
+log/*
+temp/*
+vendor/*
+.idea/*
+!.gitignore
+!.htaccess
+!web.config
+composer.lock

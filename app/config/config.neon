@@ -1,0 +1,106 @@
+parameters:
+
+    actions:
+
+        1:
+            name: Evanjelizácia v kontexte kultúry
+            speaker: Baška Muchová
+            variants:
+                a:
+                    time: sobota 10:30
+                    place:
+
+                b:
+                    time: piatok 16:00
+                    place:
+
+
+        2:
+            name: Osobnosť vedúceho v komplexnom svete
+            speaker: Zuzana Konečná
+            variants:
+                a:
+                    time: sobota 10:30
+                    place:
+
+                b:
+                    time: sobota 14:30
+                    place:
+
+        3:
+            name: Sex - oheň mimo krbu ničí
+            speaker: Danny Jones
+            variants:
+                a:
+                    time: sobota 10:30
+
+
+        4:
+            name: Čo ešte môžem...? Zahrávanie sa s hriechom
+            speaker: Marek Sonoga
+            variants:
+                a:
+                    time: sobota 14:30
+
+                b:
+                    time: sobota 16:00
+
+
+        5:
+            name: Evanjelizácia prirodzenosťou. Je len pre obdarovaných?
+            speaker: Pavol Andraško
+            variants:
+                a:
+                    time: sobota 10:30
+                    place:
+
+                b:
+                    time: sobota 16:00
+                    place:
+
+        6:
+            name: Evanjelium - je jednoduché a jednoduchým má aj ostať
+            speaker: Ľuboš Dzuriak
+            variants:
+                a:
+                    time: sobota 10:30
+                    place:
+
+        7:
+            name: Už nie som skeptik. 'Skepticizmus' je rakovinou dnešnej doby
+            speaker: Pavol Mrština
+            variants:
+                a:
+                    time: sobota 10:30
+                    place:
+
+        8:
+            name: "Ako nájdem sám seba, keď ma prvý našiel Boh?"
+            speaker: Pavol Mrština
+            variants:
+                a:
+                    time: sobota 10:30
+                    place:
+
+        9:
+            name: "Kauza Biblia"
+            speaker: Darko Kraljik
+            variants:
+                a:
+                    time: sobota 14:30
+                    place:
+
+
+
+database:
+    dsn: "sqlite:%appDir%/data.db"
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+services:
+    - App\Model\DataModel(%actions%)
+    router: App\RouterFactory::createRouter
+
