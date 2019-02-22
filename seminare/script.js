@@ -1,3 +1,5 @@
+var apiUrl = "http://seminare.mladezbrno.cz/"
+
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -43,7 +45,7 @@ $(document).ready(function () {
     }
 
     $.ajax({
-        url: "http://localhost/list?user=" + userParameter,
+        url: apiUrl + "list?user=" + userParameter,
         dataType: 'json',
         success: function (data) {
             var items = [];
@@ -66,11 +68,11 @@ $(document).ready(function () {
                 console.log($(event.target).data('id'));
 
                 if (this.checked) {
-                    $.getJSON("http://localhost/register?user=" + userParameter + "&code=" + $(element).data('id'), function (data) {
+                    $.getJSON(apiUrl + "register?user=" + userParameter + "&code=" + $(element).data('id'), function (data) {
                         console.log('OK_REG');
                     });
                 } else {
-                    $.getJSON("http://localhost/unregister?user=" + userParameter + "&code=" + $(element).data('id'), function (data) {
+                    $.getJSON(apiUrl + "unregister?user=" + userParameter + "&code=" + $(element).data('id'), function (data) {
                         console.log('OK_DEREG');
                     });
                 }

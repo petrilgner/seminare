@@ -60,14 +60,14 @@ class DataModel
         return $list;
     }
 
-    public function checkUser($user): bool
+    public function checkUser($user)
     {
         $sel = $this->getQrTable()->get($user);
         return $sel == true;
 
     }
 
-    public function findUser($key): string
+    public function findUser($key)
     {
         $sel = $this->getQrTable()
             ->where('id', $key)
@@ -93,7 +93,7 @@ class DataModel
         return $registration == true;
     }
 
-    public function register($userKey, $action, $variant): bool
+    public function register($userKey, $action, $variant)
     {
         try {
             $this->getRegistrationsTable()->insert(
