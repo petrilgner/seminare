@@ -8,10 +8,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -21,15 +19,17 @@
 <img class="img img-responsive center-block logo" src="logo.jpg">
 
 <div class="container seminare">
-<p>Zadejte kod z visacky:</p>
 
     <form action="index.html">
+        <div class="form-group">
+            <label for="userid">Kód z tvojej visačky</label>
+            <input type="number" autocomplete="off" name="q" class="form-control" id="userid" aria-describedby="kodHelp">
+            <small id="kodHelp" class="form-text text-muted">Opíš číslo uvedené pod QR kódom na rubovej strane visačky.</small>
+        </div>
 
-        <input name="user" id="user" type="number">
-        <br>
-        <input type="submit" class="btn btn-primary">
-
+        <button type="submit" class="btn btn-primary">Potvrdit</button>
     </form>
+
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

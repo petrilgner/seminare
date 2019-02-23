@@ -7,7 +7,7 @@ parameters:
             speaker: Baška Muchová
             variants:
                 a:
-                    time: sobota 10:30
+                    time: sobota 10:45
                     place:
 
                 b:
@@ -20,7 +20,7 @@ parameters:
             speaker: Zuzana Konečná
             variants:
                 a:
-                    time: sobota 10:30
+                    time: sobota 10:45
                     place:
 
                 b:
@@ -32,7 +32,7 @@ parameters:
             speaker: Danny Jones
             variants:
                 a:
-                    time: sobota 10:30
+                    time: sobota 10:45
 
 
         4:
@@ -47,11 +47,11 @@ parameters:
 
 
         5:
-            name: Evanjelizácia prirodzenosťou. Je len pre obdarovaných?
+            name: Prirodzená evanjelizácia. Je len pre obdarovaných?
             speaker: Pavol Andraško
             variants:
                 a:
-                    time: sobota 10:30
+                    time: sobota 10:45
                     place:
 
                 b:
@@ -63,7 +63,7 @@ parameters:
             speaker: Ľuboš Dzuriak
             variants:
                 a:
-                    time: sobota 10:30
+                    time: sobota 10:45
                     place:
 
         7:
@@ -71,16 +71,20 @@ parameters:
             speaker: Pavol Mrština
             variants:
                 a:
-                    time: sobota 10:30
+                    time: sobota 10:45
                     place:
 
         8:
             name: "Ako nájdem sám seba, keď ma prvý našiel Boh?"
-            speaker: Pavol Mrština
+            speaker: Táňa Trusiková
             variants:
                 a:
-                    time: sobota 10:30
+                    time: sobota 10:45
                     place:
+
+                b:
+                   time: sobota 16:00
+                   place:
 
         9:
             name: "Kauza Biblia"
@@ -89,6 +93,25 @@ parameters:
                 a:
                     time: sobota 14:30
                     place:
+
+
+        10:
+                    name: "Homosexualita"
+                    speaker: Marek Macák
+                    variants:
+                        a:
+                            time: sobota 10:45
+                            place:
+
+
+        11:
+                    name: "Komfort je modla"
+                    speaker: Richard Nagypál & Ben Uhrin
+                    variants:
+                        a:
+                            time: sobota 22:00
+                            place:
+
 
 
 
