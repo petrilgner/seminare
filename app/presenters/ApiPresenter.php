@@ -12,9 +12,7 @@ class ApiPresenter extends \Nette\Application\UI\Presenter
 
     private $user;
 
-    public function startup()
-    {
-        parent::startup();
+    public function storeUser() {
         $this->user = ltrim($this->getRequest()->getParameter('user'));
         if(is_numeric($this->user)) {
             $this->user = $this->model->findUser($this->user);
@@ -30,13 +28,16 @@ class ApiPresenter extends \Nette\Application\UI\Presenter
         }
     }
 
+
     public function actionList($user)
     {
+        $this->storeUser();
         $this->sendJson($this->model->getList($this->user));
     }
 
     public function actionRegister($user, $code)
     {
+        $this->storeUser();
         $state = false;
         $parts = explode('_', $code);
         if ($this->model->checkVariant($parts[0], $parts[1])) {
@@ -50,6 +51,7 @@ class ApiPresenter extends \Nette\Application\UI\Presenter
 
     public function actionUnregister($user, $code)
     {
+        $this->storeUser();
         if(!$code) {
             $this->error('No CODE.', 403);
         }
@@ -61,6 +63,10 @@ class ApiPresenter extends \Nette\Application\UI\Presenter
         }
         $this->sendJson(['result' => $state]);
 
+    }
+
+    public function renderCounts() {
+        $this->sendJson($this->model->getRegisteredCounts());
     }
 
     public function afterRender()

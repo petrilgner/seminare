@@ -93,6 +93,29 @@ class DataModel
         return $registration == true;
     }
 
+    public function getRegisteredCounts()
+    {
+        $data = $this->db->query('SELECT seminar, varianta, COUNT(*) AS cnt from registrations GROUP by seminar,varianta ORDER by seminar;');
+        $list = [];
+        foreach ($data->fetchAll() as $item) {
+
+            $ids = $item['seminar'];
+            $var = $item['varianta'];
+
+            $sem = $this->data[$ids];
+            $list[] = [
+                'nazev' => $sem['name'],
+                'speaker' => $sem['speaker'],
+                'time' => $sem['variants'][$var]['time'],
+                'count' => $item['cnt'],
+
+            ];
+        }
+
+        return $list;
+    }
+
+
     public function register($userKey, $action, $variant)
     {
         try {
